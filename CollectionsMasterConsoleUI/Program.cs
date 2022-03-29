@@ -13,22 +13,21 @@ namespace CollectionsMasterConsoleUI
 
             #region Arrays
             // Create an integer Array of size 50
-            var numbers = new int[50];
+            var numArray = new int[50];
 
             //Create a method to populate the number array with 50 random numbers that are between 0 and 50
-            Populater(numbers);
+            Populater(numArray);
 
             //Print the first number of the array
-            Console.WriteLine($"{numbers[0]}");
+            Console.WriteLine($"First number of the array is: {numArray[0]}");
 
             //Print the last number of the array            
-            Console.WriteLine($"{numbers[numbers.Length-1]}");
-
+            Console.WriteLine($"Last number of the array is: {numArray[numArray.Length-1]}");
 
             Console.WriteLine("All Numbers Original");
             //Use this method to print out your numbers from arrays or lists
 
-            NumberPrinter(numbers);
+            NumberPrinter(numArray);
 
             Console.WriteLine("-------------------");
 
@@ -36,24 +35,24 @@ namespace CollectionsMasterConsoleUI
             //Try for 2 different ways
             /*     Hint: Array._____(); Create a custom method     */
 
-            Console.WriteLine("All Numbers Reversed:");
+            Console.WriteLine("All Numbers Reversed using a For Loop:");
 
-            for (int i = numbers.Length - 1; i >= 0; i--)
+            for (int i = numArray.Length - 1; i >= 0; i--)
                 {
-                     Console.WriteLine(numbers[i]);  //starts at last index value and prints list backward
+                     Console.WriteLine(numArray[i]);  //starts at last index value and prints list backward
                 }
 
 
-                Console.WriteLine("---------REVERSE CUSTOM------------");
+                Console.WriteLine("---------REVERSE CUSTOM (using the method)------------");
 
-            ReverseArray(numbers);
+            ReverseArray(numArray);
 
             Console.WriteLine("-------------------");
 
             //Create a method that will set numbers that are a multiple of 3 to zero then print to the console all numbers
             Console.WriteLine("Multiple of three = 0: ");
 
-            ThreeKiller(numbers);
+            ThreeKiller(numArray);
 
             Console.WriteLine("-------------------");
 
@@ -61,8 +60,8 @@ namespace CollectionsMasterConsoleUI
             /*      Hint: Array.____()      */
             Console.WriteLine("Sorted numbers:");
             
-            Array.Sort(numbers);
-            NumberPrinter(numbers);
+            Array.Sort(numArray);
+            NumberPrinter(numArray);
 
             Console.WriteLine("\n************End Arrays*************** \n");
             #endregion
@@ -174,7 +173,7 @@ namespace CollectionsMasterConsoleUI
 
         private static void Populater(List<int> numberList)
         {
-            while (numberList.Count < 51)
+            while (numberList.Count < 50)
             {
                 Random rng = new Random();
                 var number = rng.Next(0, 50);
